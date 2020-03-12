@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .wrap {
+            width: 960px;
+            margin: auto;
+            display: flex;
+
+
+        }
+
+        .item:hover {
+            opacity: 1;
+            filter: grayscale(0);
+            transform: rotate(0deg);
+        }
+
+        .item {
+            position: relative;
+            margin: 10px;
+            overflow: hidden;
+            transform: rotate(720deg);
+            opacity: 0;
+            transition: 0.5s;
+            filter: :grayscale(1);
+
+        }
+
+        .labeltitle {
+
+            color: white;
+            background-color: red;
+            position: absolute;
+            /* top: -6px;
+            left: -6px; */
+        }
+
+        .label {
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+            right: 20px;
+            top: 20px;
+            padding: 10px;
+            background-color: #000;
+
+            transform: scale(0.5)rotate(720deg);
+
+            opacity: 0;
+            /* 透明 */
+            color: #fff;
+            transition: 1s;
+            /* 動畫:秒數 */
+        }
+
+        .label:hover {
+            opacity: 1;
+            transform: scale(1)rotate(0deg);
+        }
+
+        .item img {
+            vertical-align: bottom;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrap">
+        <div class="item">
+            <div class="labeltitle"><strong>嚴選垃圾</strong></div>
+            <img src="https://picsum.photos/300/200/?random=1">
+            <div class="label">
+                <h3>title</h3>
+                <p>造型看見一定瘋狂天然寫出來給他稱為高雄水溝而來投入，職務正式航空韓國留言委託不斷一片看看哪個進來相。</p>
+
+            </div>
+        </div>
+        <div class="item">
+            <div class="labeltitle"><strong>嚴選垃圾</strong></div>
+
+            <img src="https://picsum.photos/300/200/?random=1">
+            <div class="label">
+                <h3>title</h3>
+                <p>造型看見一定瘋狂天然寫出來給他稱為高雄水溝而來投入，職務正式航空韓國留言委託不斷一片看看哪個進來相。</p>
+
+            </div>
+
+        </div>
+        <div class="item">
+            <div class="labeltitle"><strong>嚴選垃圾</strong></div>
+
+            <img src="https://picsum.photos/300/200/?random=1">
+
+            <div class="label">
+                <h3>title</h3>
+                <p>造型看見一定瘋狂天然寫出來給他稱為高雄水溝而來投入，職務正式航空韓國留言委託不斷一片看看哪個進來相。</p>
+            </div>
+
+        </div>
+    </div>
+</body>
+
+</html>
