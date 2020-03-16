@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        p {
+            background-color: #ccc;
+            position: relative;
+            padding: 20px;
+        }
+
+        /* p::before {
+            position: absolute;
+            content: '';
+
+            left: 0;
+            top: 0;
+            width: 10px;
+            height: 10px;
+            border-top: 2px solid black;
+            border-left: 2px solid red;
+        }
+
+        p::after {
+            position: absolute;
+            content: '';
+
+            right: 0;
+            bottom: 0;
+            width: 10px;
+            height: 10px;
+            border-right: 2px solid red;
+            border-bottom: 2px solid black;
+
+        }
+         */
+        p::before {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 10px;
+            height: 10px;
+            content: '-';
+            /* background-color: red; */
+            /* text-indent: -20px; */
+        }
+
+        p::after {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 10px;
+            height: 20px;
+            content: '-';
+            /* background-color: red; */
+            /* text-indent: -20px; */
+        }
+    </style>
+</head>
+
+<body>
+
+</body>
+
+</html>

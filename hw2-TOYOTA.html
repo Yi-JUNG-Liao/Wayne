@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TNGA新世代造車工藝</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        .header {
+            display: flex;
+            padding: 0 20px;
+            background-color: #000;
+            /* position: fixed; */
+        }
+
+        .navcenter {
+            text-align: center;
+            width: 100%;
+        }
+
+        .header nav a {
+            display: inline-block;
+            text-decoration: none;
+            line-height: 50px;
+            color: white;
+            font-size: 20px;
+            padding: 10px 70px;
+            margin: 0 5px;
+            position: relative;
+        }
+
+        .header nav a:hover::after {
+            content: '';
+            border-bottom: 3px solid red;
+            display: block;
+            position: absolute;
+            width: 100%;
+            left: 0px;
+            bottom: 0px;
+        }
+
+        .title {
+            display: flex;
+            justify-content: center;
+        }
+
+        .title h1 {
+            font-size: 50px;
+            margin: 90px 0;
+            position: relative;
+        }
+
+        .title h1::after {
+            content: '';
+            border-bottom: 5px solid #000;
+            display: block;
+            position: absolute;
+            width: 50px;
+            left: 75px;
+            bottom: -20px;
+        }
+
+        .buttom {
+            display: flex;
+            position: relative;
+        }
+
+        .buttom .black a {
+
+            color: black;
+            display: inline-block;
+            text-decoration: none;
+            border: 1px dashed #000;
+            border-bottom: 2px solid red;
+            font-size: 20px;
+            padding: 10px 70px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .wrap {
+            width: 980px;
+            height: 800px;
+            margin: 50px auto;
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .group {
+            width: 100%;
+            height: 100%;
+            margin: 50px;
+            /* background-color: #00f; */
+            position: relative;
+        }
+
+        .fivebig {
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        .background {
+            width: 440px;
+            height: 275px;
+            background-color: #eee;
+            position: absolute;
+            top: 50px;
+            right: -70px;
+        }
+
+        .pic {
+            position: absolute;
+            top: 137px;
+            right: 0;
+        }
+
+        .content {
+            position: absolute;
+            top: 540px;
+            left: 50px;
+        }
+
+        .play {
+            position: absolute;
+            top: 337px;
+            right: -10px;
+        }
+
+        .wrap>.group:nth-child(even) .fivebig {
+            top: 0;
+            left: 600px;
+        }
+
+        .wrap>.group:nth-child(even) .background {
+            top: 50px;
+            right: 150px;
+        }
+
+        .wrap>.group:nth-child(even) .pic {
+            top: 137px;
+            right: 185px;
+        }
+
+
+
+        .wrap>.group:nth-child(even) .content {
+            top: 540px;
+            left: 270px;
+        }
+
+
+
+        .wrap>.group:nth-child(even) .play {
+            top: 337px;
+            right: 830px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="header">
+        <nav class="navcenter">
+            <a href="#">核心理念</a>
+            <a href="#">五大優勢</a>
+            <a href="#">46 THINGS</a>
+            <a href="#">影片演示</a>
+            <a href="#">搭載車款</a>
+        </nav>
+    </div>
+
+    <div class="title">
+        <h1>五大優勢</h1>
+    </div>
+
+    <div class="buttom">
+        <nav class="navcenter black">
+            <a href="#"><strong>操控樂趣</strong></a>
+            <a href="#"><strong>安全守護</strong></a>
+            <a href="#"><strong>乘坐舒適</strong></a>
+            <a href="#"><strong>以人為本</strong></a>
+            <a href="#"><strong>引以為傲</strong></a>
+        </nav>
+    </div>
+    <div class="wrap">
+        <div class="group">
+            <div class="background"></div>
+            <div class="pic">
+                <img src="pic/advantage-1-video-button-bg.png_9e068d9b" alt="">
+            </div>
+            <div class="fivebig">
+                <img src="pic/advantage-1-info.png_0a3640e4" alt="">
+            </div>
+            <div class="content">
+                <img src="pic/advantage-1-revolution.png_03f7cf26" alt="">
+            </div>
+            <div class="play">
+                <img src="pic/video-icon.png_73425069" alt="">
+            </div>
+        </div>
+        <div class="group">
+            <div class="background"></div>
+            <div class="pic">
+                <img src="pic/advantage-2-video-button-bg.png_af18d668" alt="">
+            </div>
+            <div class="fivebig">
+                <img src="pic/advantage-2-info.png_46657c02" alt="">
+            </div>
+            <div class="content">
+                <img src="pic/advantage-2-revolution.png_8a66e718" alt="">
+            </div>
+            <div class="play">
+                <img src="pic/video-icon.png_73425069" alt="">
+            </div>
+        </div>
+        <div class="group">
+            <div class="background"></div>
+            <div class="pic">
+                <img src="pic/advantage-3-video-button-bg.png_705545c7" alt="">
+            </div>
+            <div class="fivebig">
+                <img src="pic/advantage-3-info.png_bb6d0619" alt="">
+            </div>
+            <div class="content">
+                <img src="pic/advantage-3-revolution.png_c784ae45" alt="">
+            </div>
+            <div class="play">
+                <img src="pic/video-icon.png_73425069" alt="">
+            </div>
+        </div>
+        <div class="group">
+            <div class="background"></div>
+            <div class="pic">
+                <img src="pic/advantage-4-video-button-bg.png_24515544" alt="">
+            </div>
+            <div class="fivebig">
+                <img src="pic/advantage-4-info.png_e56fc8c8" alt="">
+            </div>
+            <div class="content">
+                <img src="pic/advantage-4-revolution.png_f12112d0" alt="">
+            </div>
+            <div class="play">
+                <img src="pic/video-icon.png_73425069" alt="">
+            </div>
+        </div>
+        <div class="group">
+            <div class="background"></div>
+            <div class="pic">
+                <img src="pic/advantage-5-video-button-bg.png_ad476b92" alt="">
+            </div>
+            <div class="fivebig">
+                <img src="pic/advantage-5-info.png_30a0a814" alt="">
+            </div>
+            <div class="content">
+                <img src="pic/advantage-5-revolution.png_f9faed2a" alt="">
+            </div>
+            <div class="play">
+                <img src="pic/video-icon.png_73425069" alt="">
+            </div>
+        </div>
+
+    </div>
+
+    <!-- <div class="footer">
+        &copy; copyright 2020 by Chen-Tse
+    </div> -->
+
+</body>
+
+</html>

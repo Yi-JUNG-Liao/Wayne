@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            width: 0px;
+            height: 0px;
+            border-top: 30px solid pink;
+            /* transparent 透明 */
+            border-left: 30px solid pink;
+            border-right: 30px solid transparent;
+            border-bottom: 30px solid transparent;
+            border-radius: 50%;
+            transform: rotate(720deg);
+            transition: .5s;
+            position: absolute;
+
+
+        }
+
+        body {
+            position: relative;
+        }
+
+        /* div:hover {
+            transform: rotate(0deg);
+        } */
+
+        .sample1 {
+            margin: 100px;
+            width: 40px;
+            height: 40px;
+            background-color: #ffaa00;
+            position: relative;
+        }
+
+        .sample1:before {
+            content: '';
+            display: block;
+            position: absolute;
+            bottom: -10px;
+            width: 0;
+            height: 0;
+            border-top: 10px solid #ffaa00;
+            border-left: 20px solid transparent;
+            border-right: 20px solid transparent;
+
+        }
+
+        .sample2 {
+            margin: 100px;
+            width: 40px;
+            height: 40px;
+            background-color: #ffaa00;
+            position: relative;
+        }
+
+        .sample2::before {
+            content: '';
+            display: block;
+            position: absolute;
+            bottom: -10px;
+            width: 0;
+            height: 0;
+            border-bottom: 10px solid transparent;
+            border-left: 20px solid #ffaa00;
+            border-right: 20px solid #ffaa00;
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <div class="sample1"></div>
+    <!-- <div class="sample2"></div> -->
+</body>
+
+</html>
