@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        .wrap {
+            width: 100%;
+            max-width: 1200px;
+            margin: auto;
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .item {
+            width: 44.66666667%;
+            height: 200px;
+            background-color: #ccc;
+            margin: 10px 2.66666667%;
+        }
+
+        /* @media 媒體類型 and (條件一) and (條件二){
+            設定內容
+        } */
+        /* ipad V H 、desktop*/
+        @media screen and (min-width: 768px) {
+
+
+            .item {
+                width: 30.729166667%;
+                margin: 10px 1.302083333%;
+            }
+        }
+
+        /* ipad H 、desktop */
+        @media screen and (min-width: 992px) {
+            .item {
+                width: 23.046875%;
+                margin: 10px 0.9765625%;
+            }
+
+        }
+
+
+        /* desktop */
+        @media screen and (min-width: 1200px) {
+            .item {
+                width: 15%;
+                margin: 10px 0.83333333%;
+            }
+
+        }
+    </style>
+</head>
+
+<body>
+    <!--  -->
+
+    <div class="wrap">
+
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+    </div>
+
+</body>
+
+</html>
