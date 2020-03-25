@@ -25,7 +25,7 @@ background-color: #272727;
 }
 .wrap .headder .headderAddress p{
     color: white;
-    padding: 20px 0 20px 300px;
+    padding: 20px 0 20px 100px;
     font-size: 14px;
     font-family: sans-serif;
 }
@@ -34,7 +34,7 @@ background-color: #272727;
 }
 .wrap .headder .headderPhones p{
     color: white;
-    padding: 20px 0 20px 30px;
+    padding: 20px 20px 20px 30px;
     font-family: sans-serif;
     font-size: 14px;
 }
@@ -75,7 +75,7 @@ background-color: #272727;
 
 
 .wrap .headderbottom .headderbottomleft img{
-    padding: 40px 20px 40px 300px;
+    padding: 40px 20px 40px 100px;
     position: absolute;
     top: 50px;
     left: 0;
@@ -88,7 +88,7 @@ background-color: #272727;
     left: 700px;
 }
 .wrap .headderbottom .headderbottommiddle nav{
-    padding: 70px 10px 70px 100px;
+    padding: 70px 0px 70px 10px;
    
    
 }
@@ -105,7 +105,7 @@ background-color: #272727;
     position: absolute;
     top: 50px;
     left: 1300px;
-    padding: 70px 300px;
+    padding: 70px 0px;
     
 }
 .wrap .headderbottom .headderbottomright i{
@@ -114,7 +114,7 @@ background-color: #272727;
 
 
 .wrap .headderbottom .headderbottom-center{
-    left:500px;
+    left:300px;
     top: 380px;
     color: white;
     position: absolute;
@@ -274,5 +274,113 @@ background-color: #272727;
     font-weight: 400;    
     color: white;
 }
+.recent-news .recent-news-line{
+    width: 300px;
+    height: 62px;
+    margin-top: 80px;
+    padding-top: 30px;
+    position: relative;
+}
+.recent-news .recent-news-line span{
+    width: 66px;
+    height: 2px;
+    background-color: #2ac5f4;
+    position: absolute;
+    top: 0;
+    left: 530px;
+    margin: auto;
+}
+.recent-news .recent-news-txt{
+    text-align: center;
+}
+.recent-news .row img{
+    width: 100%;
+    
+}
+.recent-news .recent-news-content .title {
+    padding: 30px 0;
+}
+.recent-news .recent-news-content .title a{
+    font-family: sans-serif;
+    font-size: 18px;
+    color: #333333;
+}
+.recent-news .recent-news-bottom-buttom{
+    text-align: center;
+    padding: 70px 0;
+    
+}
+.recent-news .recent-news-bottom-buttom span{
+    font-size: 14px;
+    padding: 22px 37px;
+    color: white;
+    font-family: sans-serif;
+    background-color: #398ffc;
+}
+.footer{
+    background-color: #333333;
+    padding: 130px 0px;
+} 
+
+.footer .footer-txt{
+    color: #888888;
+    font-size: 16px;
+    font-family: sans-serif;
+}
+.footer .second-title{
+   
+    color: white;
+    
+}
+.footer .second-title h2{
+    padding: 10px;
+    font-size: 18px;
+    font-family: sans-serif;
+}
+.footer .list li{
+    padding: 10px;
+    color: #2ac5f4;
+}
+.footer .list li:first-child{
+    color: white;
+}
+.footer .third-title h2{
+    padding: 10px 0px;
+    font-size: 18px;
+    color: white;
+}
+.footer .third-txt a{
+    font-size: 16px;
+    font-family: sans-serif;
+    color: white;
+}
+.footer .third-txt h4{
+    font-size: 16px;
+    font-family: sans-serif;
+    margin: 0;
+    width: 315px;
+    
+}
+.footer .third-txt span{
+    font-size: 14px;
+    font-family: sans-serif;
+    color: #888888;
+}
+.footer .third-txt .top-txt{
+    padding: 10px 10px 30px 0;
+}
+.footer .four-title h2{
+    color: white;
+    font-size: 16px;
+    padding: 10px;
+}
+.footer .four-txt p{
+    color: #888888;
+}
+.footer .four-txt a{
+    color: #2AC5F4;
+}
+
+
 
 
