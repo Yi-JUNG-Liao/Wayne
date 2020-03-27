@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .LastName {
+
+            background-color: #f00;
+        }
+
+        .FirstName {
+            background-color: #00f;
+        }
+
+        .FullName {
+            background-color: #0f0;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1 id="title">Show Name</h1>
+
+    <div class="LastName">
+        <p>
+            LastName
+        </p>
+    </div>
+    <div class="FirstName">
+        <p>
+            FirstName
+        </p>
+    </div>
+    <div class="FullName">
+
+        <p>
+            FullName
+        </p>
+    </div>
+
+    <img src="" id="pic01" />
+
+
+    <button id='btn01' onclick="showname()">按我顯示名字</button>
+    <button id="btn02">Click FullName</button>
+
+
+    <script>
+        var lastName = '翊融', firstName = '廖', age = 22, gender = false;
+
+
+
+
+        var fullName = lastName + " " + firstName;
+
+        var title = document.getElementById("title");
+
+        title.innerHTML = fullName;
+        title.style.color = "blue";
+        // title.textContent = "顯示我的名字";
+
+        var p1 = document.querySelector(".LastName");
+        var p2 = document.querySelector(".FirstName");
+        var p3 = document.querySelector(".FullName");
+
+        p1.textContent = lastName;
+        p2.textContent = firstName;
+        p3.textContent = fullName;
+
+        var img = document.getElementById("pic01");
+
+        img.src = "https://lh3.googleusercontent.com/proxy/-X3Y3vBHJHgQmibLyf2ja7oo85C0uOetItAB50tjj7wy_JsdS91OBU8eXjI5GBB0jw62IHUieAOdS9xmRDvbNDJUNZ6VgcdCEI7UDJsq5Knrjufp";
+        img.width = "200";
+        img.height = "200";
+
+
+        var btn01 = document.getElementById("btn01");
+
+        //JavaScript & Java Style 
+        function showname() {
+            alert(fullName)
+        }
+        /*  C# Style
+        function ShowName(){
+
+        } */
+        var btn02 = document.getElementById("btn02");
+        btn02.onclick = showname;
+
+
+    </script>
+</body>
+
+</html>
