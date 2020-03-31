@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>20200331-HTML_Empty</title>
+
+    <button onclick="add()">+++++</button>
+    <button onclick="addUl()">UL+++++</button>
+
+</head>
+
+<body>
+
+
+    <script>
+
+        var array1 = ['Windows', 'macOS', 'Linux', 'Unix'];
+
+
+        function add() {
+
+            var div = document.createElement('div');
+            var ul = document.createElement('ul');
+
+            var li1 = document.createElement('li1');
+            li1.innerHTML = 'Node<br>';
+
+            var li2 = document.createElement('li2');
+            li2.innerHTML = 'NodeList<br>';
+
+            var li3 = document.createElement('li3');
+            li3.innerHTML = 'HTMLCollection';
+
+            var h1 = document.createElement('h1');
+            h1.innerHTML = 'DOM';
+
+            var p1 = document.createElement('p1');
+            p1.innerHTML = 'window<br>';
+
+            var p2 = document.createElement('p2');
+            p2.innerHTML = 'document<br>';
+
+            var p3 = document.createElement('p3');
+            p3.innerHTML = 'html';
+
+            var body = document.getElementsByTagName('body')[0];
+            body.appendChild(h1);
+            body.appendChild(div);
+            body.appendChild(ul);
+
+
+            div.appendChild(p1);
+            div.appendChild(p2);
+            div.appendChild(p3);
+
+
+            ul.appendChild(li1);
+            ul.appendChild(li2);
+            ul.appendChild(li3);
+
+
+
+
+        }
+
+
+    </script>
+
+</body>
+
+</html>

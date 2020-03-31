@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+
+        var products = {
+            Iphone: {
+                p01: { id: 'p01', color: 'gray', price: '20000', storage: '16G', network: 'WI-FI', pic: 'p01.jpg', url: 'http://' },
+                //     p02: { id='p02', color='yellow', price='30000', storage='32G', network='4G', pic='p02.jpg', url='http://' },
+                //     p03: { id='p03', color='black', price='40000', storage='64G', network='5G', pic='p03.jpg', url='http://' }
+            },
+            Ipad: {
+
+            },
+            Mac: {
+
+            },
+            Watch: {
+
+            }
+
+        };
+        var p01 = products.Iphone.p01;
+        console.log(p01.id + ',' + p01.color + ',' + p01.price + ',' + p01.storage + ',' + p01.network + ',' + p01.pic + ',' + p01.url);
+
+
+        var div = document.createElement('div');
+
+        var p = document.createElement('p');
+
+
+
+        var body = document.getElementsByTagName('body')[0];
+        body.appendChild(div);
+        div.appendChild(p);
+
+    </script>
+
+</body>
+
+</html>

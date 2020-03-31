@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <button>Show Name</button>
+
+    <script type="module">
+
+        var btn = document.querySelector('button');
+
+        // btn.onclick = function () {
+        //     alert('Hi....');
+        // }
+
+        btn.addEventListener('mouseover', function (event) {
+            alert(`${event.constructor.name}事件類型的${event.type}事件`);
+
+        })
+
+
+
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <button onclick="addp()">ADD P</button>
+    <button onclick="addli()">Add li</button>
+
+</head>
+
+<body>
+    <h1>DOM</h1>
+    <div>
+        <p id='p1'>window</p>
+        <p id='p2'>document</p>
+        <p id='p3'>html</p>
+        <p id='p4'>55555</p>
+    </div>
+    <ul>
+        <li id='li1'>Node</li>
+        <li id='li2'>NodeList</li>
+        <li id='li3'>HTMLCollection</li>
+    </ul>
+
+</body>
+
+<script type="module">
+
+    import { $g } from '../JavaScriptExamples/MyTools.js';
+
+    var div = $g('div');
+    var ul = $g('ul');
+
+    var msg = document.getElementById('msg');
+
+
+    console.log(div);
+    console.log(ul);
+
+    // var div = document.querySelector('div');
+    // var ul = document.querySelector('ul');
+
+
+
+
+    function addp() {
+        for (let i = 0; i < div.children.length; i++) {
+            document.write(div.children[i].innerHTML + '<br>');
+        }
+        document.write('<hr>');
+        [...div.children].forEach((item, index) => {
+            document.write(index + ". " + item.innerHTML + '<br>');
+        });
+
+    }
+
+    function addli() {
+        for (let i = 0; i < ul.children.length; i++) {
+            document.write(ul.children[i].innerHTML + '<br>')
+        }
+        document.write('<hr>');
+        [...ul.children].forEach((item, index) => {
+            document.write(index + '. ' + item.innerHTML + '<br>');
+        });
+    }
+
+
+
+</script>
+
+</html>
