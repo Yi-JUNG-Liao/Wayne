@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link href="stylesheets/bootstrap.min.css" rel="stylesheet">
+    <link href="stylesheets/dashboard.css" rel="stylesheet">
+
+    <title>1A2B</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+
+
+                <div class="btn-group btn-group-justified">
+                    <a id="start" type="button" class="btn btn-default" onclick="Start()">開始</a>
+                    <a id="restart" type="button" class="btn btn-default" onclick="Start()">放棄重來</a>
+                    <a id="answer" type="button" class="btn btn-default" onclick="Answer()">看答案</a>
+                </div>
+                <br>
+                <ul id="guessResult" class="list-group"></ul>
+                <div class="input-group">
+                    <span class="input-group-addon" id="sizing-addon1">答案欄:</span>
+                    <input id="userGuess" type="text" name="" class="form-control" value="" required="required">
+                    <span class="input-group-btn">
+                        <a id="guess" type="button" class="btn btn-default" onclick="Guess()">GO!</a>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        var guess = document.getElementById('guessResult');
+        var random = new Array(4);
+        var temp;
+        function Start() {
+            for (i = 0; i < random.length; i++) {
+                temp = Math.floor(Math.random() * 10);
+                if (random.includes(temp)) {
+                    temp = Math.floor(Math.random() * 10);
+                }
+                else {
+                    random[i] = temp;
+                }
+            }
+
+            alert('遊戲開始');
+            guess.innerHTML = null;
+        }
+
+        function Guess() {
+            var ansA = 0, ansB = 0;
+            var user = document.getElementById('userGuess').value.toString();
+            var input = document.getElementById('userGuess');
+
+            if (random == null) {
+                alert('請先開始遊戲');
+                return;
+            }
+
+            if (user.length != 4) {
+                alert('輸入數字長度錯誤');
+                input.value = null;
+                return;
+            }
+
+            for (i = 0; i < 4; i++) {
+                for (j = 0; j < i; j++) {
+                    if (user[i] == user[j]) {
+                        alert('輸入數字不能重複');
+                        input.value = null;
+                        return;
+                    }
+                }
+            }
+
+            for (i = 0; i < 4; i++) {
+                if (random[i] != user[i]) {
+                    for (j = 0; j < 4; j++) {
+                        if (random[i] == user[j]) {
+                            ansB++;
+                        }
+                    }
+                }
+                else
+                    ansA++;
+            }
+
+            var li = document.createElement('li');
+            li.className = 'list-group-item';
+            var span = document.createElement('span');
+            span.innerText = `${ansA} A ${ansB} B`;
+            guess.appendChild(li);
+
+            if (ansA == 4) {
+                span.className = 'label label-success';
+            }
+            else {
+                span.className = 'label label-danger';
+            }
+            li.appendChild(span);
+            li.innerHTML += `guess = ${user}`;
+
+            input.value = null;
+        }
+
+        function Answer() {
+            alert(`答案是 ： ${random}`);
+        }
+    </script>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
