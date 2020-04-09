@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>用XMLHttpRequest請求GitHub JSON資料</h1>
+
+    <button id='button1'>Request JSON1</button>
+    <button id='button2'>Request JSON2</button>
+    <button id='button3'>Request JSON3</button>
+    <div id='msg'></div>
+    <script>
+
+        let msg = document.getElementById('msg');
+        document.querySelectorAll('button').forEach((item)=>{
+            item.addEventListener('click',()=>{ msg.innerHTML=''});
+        });
+
+        let btn1 = document.querySelector('#button1');
+        btn1.addEventListener('click', requestJSON1);
+
+        let btn2 = document.querySelector('#button2');
+        btn2.addEventListener('click', requestJSON2);
+
+        let btn3 = document.querySelector('#button3');
+        btn3.addEventListener('click', requestJSON3);
+
+        let xhr = new XMLHttpRequest();
+        const url = "http://127.0.0.1:5502/XMLHttpRequest/iPad_DataFixed.json";
+
+        //Ex1
+        function requestJSON1() {
+            let xhr = new XMLHttpRequest();
+            xhr.onload = function () {
+                msg.textContent = this.responseText;
+            }
+            xhr.open("GET", url);
+            xhr.send();
+        }
+
+        //Ex2
+        function requestJSON2() {
+            xhr.onload = responseHandler;
+            xhr.open("GET", url);
+            xhr.send();
+        }
+
+        function responseHandler() {
+            msg.textContent = this.responseText;
+        }
+
+        //Ex3
+        function requestJSON3() {
+            xhr.addEventListener('load', responseHandler);
+            xhr.open("GET", url);
+            xhr.send();
+        }
+
+        //Ex4
+        function requestJSON1() {
+            let xhr = new XMLHttpRequest();
+            xhr.onreadystatechange=function(){
+                msg.textContent = this.responseText;
+            };
+            xhr.open("GET", url);
+            xhr.send();
+        }
+    </script>
+</body>
+
+</html>

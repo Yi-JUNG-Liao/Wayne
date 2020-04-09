@@ -1,0 +1,215 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <title>Hello, world!</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+
+        }
+
+
+        table {
+            justify-content: center;
+
+
+        }
+
+        th {
+            text-align: center;
+            width: 300px;
+            border: 2px solid #000;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="msg">
+
+    </div>
+
+
+    <script>
+        var body = document.getElementsByTagName('body')[0];
+        var div = document.createElement('div');
+        var table = document.createElement('table');
+        table.className = 'container';
+        var tbody = document.createElement('tbody');
+
+
+        window.onload = function () {
+            function requestJSON() {
+                let xhr = new XMLHttpRequest();
+                xhr.onload = function () {
+                    document.getElementById('msg').innerHTML = this.responseText;
+                }
+                xhr.open("GET", "http://127.0.0.1:5500/ipad.json");
+                // xhr.open("POST", 'http://...');
+                // xhr.send();
+            }
+
+        }
+
+
+
+        // const employees = [
+        //     { name: "Kevin", age: 32, height: 175, weight: 64 },
+        //     { name: "David", age: 35, height: 170, weight: 60 },
+        //     { name: "Mary", age: 22, height: 172, weight: 52 },
+        //     { name: "John", age: 18, height: 178, weight: 70 },
+        //     { name: "Cindy", age: 26, height: 168, weight: 50 }
+        // ];
+        // console.log(Object.keys(employees[0]));
+        // console.log(Object.values(employees[0]));
+
+        // window.onload = function () {
+        //     const titlesArray = Object.keys(ipad[0]);
+
+        //     addThead(titlesArray);
+
+        //     ipad.forEach((item) => {
+        //         addTbody(Object.values(item))
+        //     });
+        // }
+
+        const ipad = [
+            {
+                "sku": "MW762",
+                "price": 10900,
+                "storage": "32GB",
+                "description": "10.2 吋 iPad Wi-Fi 機型 32GB - 金色",
+                "picture": "ipad_gold.png"
+            },
+            {
+                "sku": "MW792",
+                "price": 13900,
+                "storage": "128GB",
+                "description": "10.2 吋 iPad Wi-Fi 機型 128GB - 金色",
+                "picture": "ipad_gold.png"
+            },
+            {
+                "sku": "MW742",
+                "price": 10900,
+                "storage": "32GB",
+                "description": "10.2 吋 iPad Wi-Fi 機型 32GB - 太空灰色",
+                "picture": "ipad_space.png"
+            },
+            {
+                "sku": "MW772",
+                "price": 13900,
+                "storage": "128GB",
+                "description": "10.2 吋 iPad Wi-Fi 機型 128GB - 太空灰色",
+                "picture": "ipad_space.png"
+            },
+            {
+                "sku": "MW752",
+                "price": 10900,
+                "storage": "32GB",
+                "description": "10.2 吋 iPad Wi-Fi 機型 32GB - 銀色",
+                "picture": "ipad_silver.png"
+            },
+            {
+                "sku": "MW782",
+                "price": 13900,
+                "storage": "128GB",
+                "description": "10.2 吋 iPad Wi-Fi 機型 128GB - 銀色",
+                "picture": "ipad_silver.png"
+            },
+            {
+                "sku": "MW6D2",
+                "price": 15400,
+                "storage": "32GB",
+                "description": "10.2 吋 iPad Wi-Fi + 行動網路機型 32GB - 金色",
+                "picture": "ipad_gold.png"
+            },
+            {
+                "sku": "MW6G2",
+                "price": 18400,
+                "storage": "128GB",
+                "description": "10.2 吋 iPad Wi-Fi + 行動網路機型 128GB - 金色",
+                "picture": "ipad_gold.png"
+            },
+            {
+                "sku": "MW6A2",
+                "price": 15400,
+                "storage": "32GB",
+                "description": "10.2 吋 iPad Wi-Fi + 行動網路機型 32GB - 太空灰色",
+                "picture": "ipad_space.png"
+            },
+            {
+                "sku": "MW6E2",
+                "price": 18400,
+                "storage": "128GB",
+                "description": "10.2 吋 iPad Wi-Fi + 行動網路機型 128GB - 太空灰色",
+                "picture": "ipad_space.png"
+            },
+            {
+                "sku": "MW6C2",
+                "price": 15400,
+                "storage": "32GB",
+                "description": "10.2 吋 iPad Wi-Fi + 行動網路機型 32GB - 銀色",
+                "picture": "ipad_silver.png"
+            },
+            {
+                "sku": "MW6F2",
+                "price": 18400,
+                "storage": "128GB",
+                "description": "10.2 吋 iPad Wi-Fi + 行動網路機型 128GB - 銀色",
+                "picture": "ipad_silver.png"
+            }
+        ]
+
+
+        addThead();
+        addTbody();
+        function addThead(titleArray) {
+
+            for (var item in ipad[0]) {
+
+                var th = document.createElement('th');
+                th.innerHTML = item;
+                table.appendChild(th);
+
+            }
+
+            body.appendChild(div);
+            div.appendChild(table);
+        }
+
+        function addTbody(rowArray) {
+            for (var item in ipad) {
+                var tr = document.createElement('tr');
+                table.appendChild(tr);
+                for (var product in ipad[item]) {
+                    var th = document.createElement('th');
+                    th.innerHTML = ipad[item][product];
+                    tr.appendChild(th);
+                }
+            }
+        }
+
+    </script>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

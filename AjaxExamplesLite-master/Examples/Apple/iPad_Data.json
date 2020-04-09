@@ -1,0 +1,105 @@
+{
+    "node": "standard/home/shop_ipad/family/ipad_10_2/select",
+    "enabledMetrics": {
+        "adobeAnalytics": true
+    },
+    "currency": "TWD",
+    "products": [
+        {
+            "sku": "MW762",
+            "price": {
+                "fullPrice": 10900
+            },
+            "category": "ipad",
+            "name": "10.2 吋 iPad Wi-Fi 機型 32GB - 金色"
+        },
+        {
+            "sku": "MW792",
+            "price": {
+                "fullPrice": 13900
+            },
+            "category": "ipad",
+            "name": "10.2 吋 iPad Wi-Fi 機型 128GB - 金色"
+        },
+        {
+            "sku": "MW742",
+            "price": {
+                "fullPrice": 10900
+            },
+            "category": "ipad",
+            "name": "10.2 吋 iPad Wi-Fi 機型 32GB - 太空灰色"
+        },
+        {
+            "sku": "MW772",
+            "price": {
+                "fullPrice": 13900
+            },
+            "category": "ipad",
+            "name": "10.2 吋 iPad Wi-Fi 機型 128GB - 太空灰色"
+        },
+        {
+            "sku": "MW752",
+            "price": {
+                "fullPrice": 10900
+            },
+            "category": "ipad",
+            "name": "10.2 吋 iPad Wi-Fi 機型 32GB - 銀色"
+        },
+        {
+            "sku": "MW782",
+            "price": {
+                "fullPrice": 13900
+            },
+            "category": "ipad",
+            "name": "10.2 吋 iPad Wi-Fi 機型 128GB - 銀色"
+        },
+        {
+            "sku": "MW6D2",
+            "price": {
+                "fullPrice": 15400
+            },
+            "category": "ipad",
+            "name": "10.2 吋 iPad Wi-Fi + 行動網路機型 32GB - 金色"
+        },
+        {
+            "sku": "MW6G2",
+            "price": {
+                "fullPrice": 18400
+            },
+            "category": "ipad",
+            "name": "10.2 吋 iPad Wi-Fi + 行動網路機型 128GB - 金色"
+        },
+        {
+            "sku": "MW6A2",
+            "price": {
+                "fullPrice": 15400
+            },
+            "category": "ipad",
+            "name": "10.2 吋 iPad Wi-Fi + 行動網路機型 32GB - 太空灰色"
+        },
+        {
+            "sku": "MW6E2",
+            "price": {
+                "fullPrice": 18400
+            },
+            "category": "ipad",
+            "name": "10.2 吋 iPad Wi-Fi + 行動網路機型 128GB - 太空灰色"
+        },
+        {
+            "sku": "MW6C2",
+            "price": {
+                "fullPrice": 15400
+            },
+            "category": "ipad",
+            "name": "10.2 吋 iPad Wi-Fi + 行動網路機型 32GB - 銀色"
+        },
+        {
+            "sku": "MW6F2",
+            "price": {
+                "fullPrice": 18400
+            },
+            "category": "ipad",
+            "name": "10.2 吋 iPad Wi-Fi + 行動網路機型 128GB - 銀色"
+        }
+    ]
+}
