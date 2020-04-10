@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Simple Map</title>
+    <meta name="viewport" content="initial-scale=1.0">
+    <meta charset="utf-8">
+    <style>
+        /* Always set the map height explicitly to define the size of the div
+       * element that contains the map. */
+        #map {
+            height: 100%;
+        }
+
+        /* Optional: Makes the sample page fill the window. */
+        html,
+        body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="map"></div>
+    <script>
+
+        fetch('https://findmasks.herokuapp.com/places')
+            .then((response) => response.json())
+            .then((data) => {
+                for (i = 1; i <= data.features.length; i++) {
+
+                    var coord = data.features[i].geometry.coordinates;
+                    initMap
+                    console.log(coord);
+
+
+                }
+
+            })
+            .catch((error) => {
+                // Handle the error
+            });
+        function initMap() {
+
+
+
+            var uluru = { lat: 24.757149, lng: 120.952553 };
+            // The map, centered at Uluru
+            var map = new google.maps.Map(
+                document.getElementById('map'), { zoom: 20, center: uluru });
+            // The marker, positioned at Uluru
+            var marker = new google.maps.Marker({ position: uluru, map: map });
+        }
+
+    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAlKWP4uWjQIR3WDAWLAu6rUhBfc3_ppag&callback=initMap"
+        async defer></script>
+    <!-- async非同步 -->
+</body>
+
+</html>
