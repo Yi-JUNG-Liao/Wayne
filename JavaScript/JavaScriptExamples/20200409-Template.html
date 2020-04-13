@@ -10,13 +10,24 @@
         integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <script src="../JavaScriptExamples/module/20200409-Myhelper.js"></script>
     <title>Hello, world!</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        h1 {
+            text-align: center;
+        }
+    </style>
 </head>
 
 <body>
-    <h1>Template模板</h1>
+    <h1 class="container ">Template模板</h1>
     <table>
         <template id="templateTitle">
-            <tr>
+            <tr class="text-align-center">
                 <th>產品編號</th>
                 <th>售價</th>
                 <th>儲存容量</th>
@@ -42,10 +53,10 @@
                 ipad = JSON.parse(this.responseText);
                 addThead();
             }
-            xhr.open("GET", 'http://127.0.0.1:5500/iPad.json');
+            xhr.open("GET", 'http://127.0.0.1:5500/JavaScript/JavaScriptExamples/module/iPad.json');
             xhr.send();
         };
-        function addThead() {
+        function addThead(titleArray) {
             let templateTitle = $g('#templateTitle');
             let thead = $c('thead');
             thead.appendChild(templateTitle.content);

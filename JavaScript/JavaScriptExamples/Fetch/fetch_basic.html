@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../module/20200409-Myhelper.js"> </script>
+</head>
+
+<body>
+    <!-- <button>Get Mask JSON</button> -->
+    <div class="msg"></div>
+
+    <script>
+        function fetchMask(url) {
+            fetch(url)
+                .then(response => response.json())
+                .then(data => {
+                    $g("body").innerHTML = data;
+                })
+                .catch(ex => {
+                    $g("body").innerHTML = ex;
+                })
+        }
+        // let btn = $g("button");
+        // btn.addEventListener("click", fetchMask("https://www.msn.com/zh-tw"));
+
+        window.onload = fetchMask("https://findmasks.herokuapp.com/places");
+    </script>
+</body>
+
+</html>
