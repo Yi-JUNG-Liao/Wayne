@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="20200409-Myhelper.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <style>
+        b {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+
+    <p><b>明</b>月幾時有，把酒問青天</p>
+    <p></p>
+
+    <script>
+        let textString = $("p").first().text();
+
+        $("p").last().html(textString);
+    </script>
+</body>
+
+</html>

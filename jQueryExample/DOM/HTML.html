@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="20200409-Myhelper.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+    <button>js.innerHTML</button>
+    <button>jQuery.html()</button>
+
+    <div id="Msg"></div>
+    <div id="jqMsg"></div>
+
+    <script>
+        $g("button:first-child").addEventListener("click",
+            function () {
+                $g("#Msg").innerHTML = "<h1>JavaScript</h1>";
+            });
+
+        $("button").last().click(function () {
+            $("#jqMsg").html("<h1>jQuery</h1>");
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="20200409-Myhelper.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        .bingo {
+            background-color: lightblue;
+        }
+
+        .bingo li:first-child {
+            background-color: red;
+        }
+    </style>
+</head>
+
+<body>
+
+    <ul>
+        <li>HTML</li>
+        <li>CSS</li>
+        <li>JavaScript</li>
+        <li>jQuery</li>
+        <li>Vue.js</li>
+    </ul>
+    <button>Has Element?</button>
+    <div id="msg">
+
+    </div>
+    <script>
+        $("button").on("click", hasElement);
+
+        function hasElement() {
+
+            let result = $("ul").has("li");
+            $("#msg").html(result.length ? "Yes" : "No");
+
+            $("ul").has("li").addClass("bingo");
+        }
+    </script>
+</body>
+
+</html>

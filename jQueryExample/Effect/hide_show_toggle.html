@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../DOM/20200409-Myhelper.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <button id="hide">Hide</button>
+    <button id="show">Show</button>
+    <button id="toggle">Toggle</button>
+    <br>
+    <img id="woman" src="woman.jpeg" alt="">
+
+    <script>
+        $("#hide").click(function () {
+            $("#woman").hide("slow", function () {
+                alert("Hide is finished");
+
+            })
+        });
+        $("#show").click(function () {
+            $("#woman").show("slow", function () {
+
+            })
+        });
+        $("#toggle").click(function () {
+            $("#woman").toggle("slow");
+        });
+    </script>
+</body>
+
+</html>

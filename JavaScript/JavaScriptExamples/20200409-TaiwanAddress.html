@@ -4,74 +4,102 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="../JavaScriptExamples/module/20200409-Myhelper.js"></script>
     <title>Document</title>
 </head>
+<style>
+    table,
+    th,
+    td {
+        border: 1px solid red;
+    }
+</style>
 
 <body>
-    <h1>Taiwan Address /Zip Code</h1>
-    <button>Load ZipCode</button>
-
-    <template id="template">
+    <h1>Taiwan Address</h1>
+    <template id="templateTitle">
         <tr>
-            <td></td>
+            <th>縣市</th>
+            <th>區域</th>
+            <th>郵遞區號</th>
+        </tr>
+    </template>
+    <template id="templateRow">
+        <tr>
             <td></td>
             <td></td>
             <td></td>
         </tr>
     </template>
-    <div class="msg"></div>
+
+    <script src="../JavaScriptExamples/module/20200409-Myhelper.js"></script>
     <script>
-        let btn01 = $g('button');
+        let msg = $g('msg');
+        let table = $c('table');
+        let body = $g('body');
+        let thead = $c('thead');
+        let tboody = $c('tbody');
 
-        let msg = ('#msg');
-        let xhr = new XMLHttpRequest;
-        xhr.onload = function () {
+        body.appendChild(table);
+        table.appendChild(thead);
+        table.appendChild(tboody);
 
-            if (xhr.readyState == 4 && xhr.status == 200) {
-                zipcodeArray = JSON.parse(this.responseText);
-
-                console.log(zipcodeArray);//顯示抓到的資料
-
-                let ZipCode = [];
-
-                zipcodeArray.forEach((item, index) => {
-                    // zipcodeArray.push({ City: "台北市", Districts: [{ District: "中正區", ZipCode: "100" }] });
-                    // zipcodeArray.push({ City: "桃園市", Districts: [{ District: "桃園區", ZipCode: "330" }] });
-                    // zipcodeArray.push({ City: "新竹市", Districts: [{ District: "竹北區", ZipCode: "300" }] });
-                    // zipcodeArray.push({ City: "苗栗縣", Districts: [{ District: "後龍區", ZipCode: "330" }] });
-
-                    let _city = item.CityName;
-
-                    let _districts = [];
-
-                    item.AreaList.forEach((item, index) => {
-                        _districts.push({ District: item.AreaName, ZipCode: item.ZipCode });
+        window.onload = function () {
+            let xhr = new XMLHttpRequest;
+            xhr.onload = function () {
+                if (xhr.readyState == 4 && xhr.status == 200) {
+                    zipcodeArray = JSON.parse(this.responseText);
+                    let ZipCode = [];
+                    zipcodeArray.forEach((item, index) => {
+                        let _city = {
+                            CityName: item.CityName,
+                            AreaName: []
+                        };
+                        item.AreaList.forEach((name, index) => {
+                            let _city_data = {
+                                AreaName: name.AreaName,
+                                ZipCode: name.ZipCode
+                            };
+                            _city.AreaName.push(_city_data);
+                        });
+                        ZipCode.push(_city);
                     });
-
-                    let _cityObject = { City: _city, Districts: _districts };
-                    ZipCode.push(_cityObject);
-
-
-
-                });
-
-                debugger;
-
-            } else {
-                msg.textContent = '發生錯誤，HTTP response代碼：' + xhr.status;
+                    addThead();
+                    addTbody(Object.values(ZipCode));
+                }
+                else {
+                    msg.textContent = '發生錯誤，HTTP response代碼: ' + xhr.status;
+                }
             }
-            if (xhr.readyState == 4 && xhr.statusText == "OK") {
-                msg.textContent = this.responseText;
-            } else {
-                msg.textContent = '發生錯誤，HTTP response代碼：' + xhr.status;
+            xhr.open("GET", "https://raw.githubusercontent.com/gene870607/gene870607-vs_code_javascript_HW/master/JavaScript/TaiwanAddress.json");
+
+            xhr.send();
+
+            function addThead() {
+                var thead = document.querySelector('thead');
+                let templateTitle = $g('#templateTitle');
+                let cloneContent =
+                    templateTitle.content.cloneNode(true);
+                thead.appendChild(cloneContent);
             }
 
+            function addTbody(data) {
 
+                let templateRow = $g('#templateRow');
+                let tr = $g('tr');
+                for (let i = 0; i < data.length; i++) {
+                    for (let j = 0; j < data[i].AreaName.length; j++) {
+                        let cloneContent =
+                            templateRow.content.cloneNode(true);
+                        let td = cloneContent.querySelectorAll('td');
+                        td[0].textContent = data[i].CityName;
+                        td[1].textContent = data[i].AreaName[j].AreaName;
+                        td[2].textContent = data[i].AreaName[j].ZipCode;
+                        tboody.appendChild(cloneContent);
+                    }
+                }
+                table.appendChild(tboody);
+            }
         }
-        xhr.open('GET', 'http://127.0.0.1:5500/JavaScript/JavaScriptExamples/20200409-TaiwanAddress.json');
-        xhr.send();
-
     </script>
 </body>
 

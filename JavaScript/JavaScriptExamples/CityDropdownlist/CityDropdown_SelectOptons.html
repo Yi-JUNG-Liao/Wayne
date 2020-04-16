@@ -5,27 +5,80 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <script src="../module/20200409-Myhelper.js"> </script>
 </head>
 
 <body>
     <select name="cities" id="cities">
-        <option value="">---請選擇縣市---</option>
-        <option value="taipei">台北</option>
-        <option value="taoyuan">桃園</option>
-        <option value="taicung">台中</option>
+
+
 
     </select>
     <select name="district" id="district">
-        <option value="">---請選擇行政區---</option>
-        <option value="taipei01">中正區</option>
-        <option value="taipei02">萬華區</option>
-        <option value="taipei03">信義區</option>
+
+
 
     </select>
     <button>送出</button>
 
 
     <script>
+        window.onload = Address("https://raw.githubusercontent.com/apprunner/FileStorage/master/TaiwanAddress_Simple.json");
+        let citySelect = document.getElementById("cities");
+        let districtSelect = document.getElementById('district');
+        let option1 = document.createElement('option');
+        let option2 = document.createElement('option');
+
+        option1.value = '';
+        option1.text = '---請選擇縣市---';
+        citySelect.add(option1, -1);
+
+        option2.value = '';
+        option2.text = '---請選擇行政區---';
+        districtSelect.add(option2, -1);
+
+
+        // option2.setAttribute('selected', '');
+
+
+
+
+        function Address(url) {
+            fetch(url)
+                .then(response => response.json())
+                .then(data => {
+
+
+                    for (let i = 0; i < data.length; i++) {
+                        option1 = document.createElement('option');
+                        option1.value = data[i].City;
+                        option1.text = data[i].City;
+                        citySelect.add(option1, null);
+
+                        for (let j = 0; j < data[i].Districts.length; j++) {
+                            // console.log(data[i].Districts[j].District);
+                            option2 = document.createElement('option');
+                            option2.value = data[i].Districts[j].District;
+                            option2.text = data[i].Districts[j].District;
+
+                            districtSelect.add(option2, null);
+
+                        }
+                    }
+                })
+                .catch(ex => {
+                    $g("body").innerHTML = ex;
+                })
+        }
+        function citySelectChange() {
+
+        }
+
+        districtSelect.addEventListener('change', function () {
+            $g("#msg").textContent = citySelect.selectedOptions[0].text + "," + districtSelect.selectedOptions[0].text;
+        });
+
+
 
     </script>
 </body>
