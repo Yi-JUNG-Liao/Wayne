@@ -5,6 +5,7 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <script src="/jQueryExample/DOM/20200409-Myhelper.js"></script>
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
         integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
@@ -53,7 +54,7 @@
                 xhr.onload = function () {
                     document.getElementById('msg').innerHTML = this.responseText;
                 }
-                xhr.open("GET", "http://127.0.0.1:5500/ipad.json");
+                xhr.open("GET", "https://bs-frontend.azurewebsites.net/api/Apple/IPad");
                 // xhr.open("POST", 'http://...');
                 // xhr.send();
             }
@@ -169,23 +170,18 @@
             }
         ]
 
-
         addThead();
         addTbody();
         function addThead(titleArray) {
-
             for (var item in ipad[0]) {
-
                 var th = document.createElement('th');
                 th.innerHTML = item;
+                th.setAttribute('onclick', 'sorta(this)');
                 table.appendChild(th);
-
             }
-
             body.appendChild(div);
             div.appendChild(table);
         }
-
         function addTbody(rowArray) {
             for (var item in ipad) {
                 var tr = document.createElement('tr');

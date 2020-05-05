@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <style>
+        table * {
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 id="Hello"></h1>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Sun</th>
+                <th>Mon</th>
+                <th>Tue</th>
+                <th>Wen</th>
+                <th>Thur</th>
+                <th>Fri</th>
+                <th>Sat</th>
+            </tr>
+        </thead>
+        <tbody>
+
+        </tbody>
+    </table>
+    <button type="button" name="" id="" class="btn btn-primary" onclick="MinMonth()">Pre</button>
+    <button type="button" name="" id="" class="btn btn-primary" onclick="AddMonth()">Next</button>
+    <script>
+
+        var nowDate = new Date()
+
+        var year = nowDate.getFullYear();
+        var month = nowDate.getMonth();
+        var today = nowDate.getDate();
+
+        function Init() {
+            var tbody = document.getElementsByTagName('tbody')[0];
+            tbody.innerHTML = '';
+            //清空tbody
+
+            document.getElementById('Hello').innerText = `${new Date(year, month, 1).getFullYear()}年 ${new Date(year, month, 1).getMonth() + 1}月`;
+
+            //取第一天禮拜幾
+            var firstDay = new Date(year, month, 1).getDay();
+
+            //取這個月有幾天
+            var dayOfMonth = new Date(year, month + 1, 0).getDate();
+
+            var day = 1;
+            //var rows = Math.ceil(dayOfMonth / 7);
+            for (let row = 0; row < 6; row++) {
+                let tr = document.createElement('tr');
+                for (let col = 0; col < 7; col++) {
+                    let td = document.createElement('td');
+                    if (row == 0 && col < firstDay) {
+
+                    }
+                    else {
+                        if (day <= dayOfMonth) {
+                            td.innerText = day;
+                        }
+                        day++;
+                    }
+                    tr.appendChild(td);
+                }
+                tbody.appendChild(tr);
+            }
+        }
+
+        Init();
+
+        function AddMonth() {
+            month++;
+            Init();
+        }
+
+        function MinMonth() {
+            month--;
+            Init();
+        }
+
+      //做固定的畫面
+
+      //把這個月長出來 (4月)
+        //1. 現在的時間 (2020/04/22)
+        //2. 4月有幾天
+        //3. 4月的第一天是禮拜幾?
+
+//-----------------------------------------------
+
+      //製作待辦事項功能
+        //LocalStorege
+          //設計你的資料結構
+          //C R U D 功能
+        //畫面要怎麼顯示
+        //設計日期格子的html、css
+
+
+    </script>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
